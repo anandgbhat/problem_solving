@@ -1,3 +1,5 @@
+// Find the total water that can be trapped given an elevation graph with each value width being 1
+
 package main
 
 import (
