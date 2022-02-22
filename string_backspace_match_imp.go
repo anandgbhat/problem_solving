@@ -8,7 +8,7 @@ import (
 // So ab#c is same as ac
 // abc##d is same as ad
 
-// Only first string contains # and second string is plain
+// Both strings can contains #s
 
 func sanitizeStr(s string) string {
   // Validate
