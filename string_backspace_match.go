@@ -13,14 +13,21 @@ func isMatch(s1,s2 string) bool {
   s1Rune := []rune(s1)
   var str []rune
   j := 0
+  var validChar bool
 
   // # character is 35
   // Walk through the rune slice and get rid of previous characters
   for _, val := range s1Rune {
     if val != 35 {
       str = append(str, val)
+      validChar = true
       j++
     } else {
+      if validChar != true {
+        // No valid characters seen so far
+        // Skip the # and move forward
+        continue
+      }
       j--
       str = str[0:j]
     }
@@ -32,4 +39,5 @@ func isMatch(s1,s2 string) bool {
 func main() {
   fmt.Println("Match abc##c and ac = ", isMatch("abc##c", "ac"))
   fmt.Println("Match ab#c and abc = ", isMatch("ab#c", "abc"))
+  fmt.Println("Match ##ab#c and abc = ", isMatch("##abb#c", "abc"))
 }
