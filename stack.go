@@ -1,3 +1,7 @@
+// Implementing stack using slice
+// Push is equivalent to append
+// Pop is to remove the last element and resize the slice
+
 package main
 
 import (
