@@ -1,3 +1,8 @@
+
+// Queue implementation using slice
+// Enqueue is append
+// Dequeue is to return 0th element and reiniatlize the slice to [1:]
+
 package main
 
 import (
