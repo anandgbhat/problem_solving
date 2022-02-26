@@ -11,7 +11,7 @@ func isPalindromeRecursive(str []byte) bool {
   }
 
   if str[0] == str[len(str)-1] {
-    // shrink the strink by 1 character both sides
+    // shrink the string by 1 character both sides
     return isPalindromeRecursive(str[1:len(str)-1])
   }
 
