@@ -58,6 +58,40 @@ func (root *treeNode) bfsTraversalIterative() {
   }
 }
 
+func (root *treeNode) treeContains(str string) bool {
+  var queue Queue
+  var found bool
+  // Exit condition
+  if root == nil {
+    return false
+  }
+  queue.Enqueue(root)
+  //fmt.Println(root.value)
+  node := queue.Dequeue()
+
+  // Walk through the tree and push root.left and root.right to the queue
+  // Dequeue one element and push its left and right children
+  // Repeat
+  for node != nil {
+    if node.left != nil {
+       queue.Enqueue(node.left)
+    }
+    if node.right != nil {
+       queue.Enqueue(node.right)
+    }
+    node = queue.Dequeue()
+    if node != nil {
+      if node.value == str {
+        //fmt.Println("found ", str)
+        found = true
+      }
+      //fmt.Println(node.value)
+    }
+  }
+
+  return found
+}
+
 func main() {
   root := new(treeNode)
   root.value = "a"
@@ -78,4 +112,8 @@ func main() {
   root.right.right.value = "f"
 
   (*treeNode).bfsTraversalIterative(root)
+  fmt.Println("Checking if tree contains e")
+  if (*treeNode).treeContains(root, "e") == true {
+    fmt.Println("Tree contains e")
+  }
 }
