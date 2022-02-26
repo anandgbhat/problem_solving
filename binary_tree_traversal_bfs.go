@@ -83,7 +83,7 @@ func (root *treeNode) treeContains(str string) bool {
     if node != nil {
       if node.value == str {
         //fmt.Println("found ", str)
-        found = true
+        return true
       }
       //fmt.Println(node.value)
     }
