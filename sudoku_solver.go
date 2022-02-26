@@ -86,7 +86,7 @@ func isValid(row, column int, grid [][]int, num int) bool {
   startColumn := column - column%3
   for i := 0; i < 3; i++ {
     for j := 0; j < 3; j++ {
-      // Check if the value is same as the one seen on grid[row][column]
+      // Check if the value is same as num
       if grid[i+startRow] [j+startColumn] == num {
         return false
       }
