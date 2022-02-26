@@ -16,10 +16,8 @@ func (root *treeNode) sumOfAllValues() int {
   if root == nil {
     return 0
   }
-  total += root.val
-  (*treeNode).sumOfAllValues(root.left)
-  (*treeNode).sumOfAllValues(root.right)
-  return total
+  return root.val + (*treeNode).sumOfAllValues(root.left) +
+    (*treeNode).sumOfAllValues(root.right)
 }
 
 func main() {
