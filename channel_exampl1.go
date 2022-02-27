@@ -7,18 +7,19 @@ import (
 
 var wg sync.WaitGroup
 
-func display(words chan string) {
+func display(words chan []string) {
   defer wg.Done()
   str := <- words
   fmt.Println(str)
-  words <- "received"
+  words <- []string {"received"}
 }
 
 func main() {
-  words := make(chan string)
+  words := make(chan []string)
   wg.Add(1)
   go display(words)
-  words <- "Sending encoded messages"
+  s := []string {"sending", "encoded", "messages"}
+  words <- s
   fmt.Println(<-words)
   close(words)
   wg.Wait()
