@@ -22,6 +22,5 @@ func main() {
   fmt.Println(<-words)
   close(words)
   wg.Wait()
-  _, _ = fmt.Scanln()
 }
 
