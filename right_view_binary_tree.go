@@ -11,18 +11,17 @@ type treeNode struct {
 }
 
 
-var max_level int
+var result []int
 
 func leftView(root *treeNode, level int) {
   if root == nil {
     return
   }
-  // Check if the node is at the same level as max_level seen
-  // so far. If so, skip. Otherwise print the value and update
-  // max_level seen so far.
-  if max_level < level {
-    fmt.Println(root.val)
-    max_level = level
+  // If the result array has right most element of last level
+  // append this value. If not, then the right at this level
+  // is already present in the result.
+  if len(result) < level {
+    result = append(result, root.val)
   }
   // Travrse right subtree first this time
   leftView(root.right, level+1)
@@ -44,5 +43,6 @@ func main() {
   root.right.left.right.val = 6
 
   leftView(root, 1)
+  fmt.Println(result)
 }
 
