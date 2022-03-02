@@ -1,3 +1,8 @@
+// A simple program to spawn multiple goroutines and pass tasks to each goroutine using buffered channels
+// This program reads URL from STDIN and runs HTTP GET on the URL and dumps body on screen
+// Basic program to build crawler would be to read robot.txt and parse all the allowed URLs in there and start indexing them.
+
+
 package main
 
 import (
