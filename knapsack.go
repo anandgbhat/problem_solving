@@ -28,7 +28,6 @@ func knapsack(weight []int, value []int, capacity int, n int) int {
     return max(value[n]+knapsack(weight, value, capacity-weight[n], n-1),
       knapsack(weight, value, capacity, n-1))
   } else {
-    fmt.Println("Here")
     return knapsack(weight, value, capacity, n-1)
   }
 }
@@ -39,6 +38,6 @@ func main() {
   value := []int {10, 20, 40}
   capacity := 40
 
-  fmt.Println(weight, value, capacity)
+
   fmt.Println("Maximum profit = ", knapsack(weight, value, capacity, len(weight)-1))
 }
