@@ -14,7 +14,11 @@ func palindromeSubstringsCount(str string) int {
   // If so, incerement the count.
   result := 0
   for i:=0; i < len(strByte); i++ {
+    // Calculate odd sized palindromes
+    // Logic: left and right point to same char and they spread to left and right. If char at left is not same as right, break.
     result += checkPalindrome(strByte, i, i)
+    // Calculate even sized palindromes
+    // Logic: left and right point to adjacent elements. left and right spread in either direction. If char at left is not same as right, break.
     result += checkPalindrome(strByte, i, i+1)
   }
 
