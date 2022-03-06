@@ -1,2 +1,4 @@
 # problem_solving
-Trying out some problems
+Trying out some leetcode problems
+
+main() has the testcases tried.
