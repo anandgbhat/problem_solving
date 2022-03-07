@@ -6,6 +6,12 @@ import (
   "strings"
 )
 
+// NOTE: In other languages, read the entire file and parse the content to separate out lines with '\n' as delimiter.
+// Reverse the array
+// Alternatively, push each line onto stack and pop() and print each line.
+// In go, its pretty simple due to presence of strings.Split()
+
+
 func reverseFile(fileName string) []string {
   if len(fileName) == 0 {
     fmt.Println("Invalid filename")
