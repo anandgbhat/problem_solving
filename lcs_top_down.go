@@ -40,7 +40,7 @@ func main() {
     mem[i] = make([]int, len(str2)+1)
   }
 
-  // Initialize first two and first column to 0
+  // Initialize first row and first column to 0
   for i:=0; i <= len(str1); i++ {
     for j:=0; j <= len(str2); j++ {
       if i==0 {
