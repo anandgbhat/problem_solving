@@ -90,7 +90,13 @@ func main() {
       }
     }
   }
-  fmt.Printf("lcs of %s and %s = %v\n", str1, str2,
-   reverse(string(lcs(mem, []byte(str1), []byte(str2), len(str1), len(str2)))))
+  lcs := reverse(string(lcs(mem, []byte(str1), []byte(str2), len(str1), len(str2))))
+
+  // To arrive at lcs, number of deletions from str1 is len(str1) - len(lcs)
+  // To convert lcs to str2, number of insertions is len(str2) - len(lcs)
+
+  fmt.Printf("number of insertions and deletion to convert %s to %s are "+
+    " %d %d\n", os.Args[1], os.Args[2], len(os.Args[2])-len(lcs),
+      len(os.Args[1])-len(lcs))
 }
 
