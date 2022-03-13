@@ -8,6 +8,7 @@ import (
 
 var min int
 
+
 func solve(nums []int, i,j int) int {
   // Base condition
   if i>= j {
@@ -32,5 +33,6 @@ func main() {
   nums := []int {40, 20, 30, 10, 30}
   min = math.MaxInt
 
+  // Dimension of each matrix is nums[i-1] * nums[i]
   fmt.Println("Minimum cost of multiplication = ", solve(nums, 1, len(nums)-1))
 }
