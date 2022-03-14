@@ -22,8 +22,7 @@ func longestCommonSubstr(mem [][]int, str1 []byte, str2 []byte,  m int, n int) i
         mem[i][j] = 1+mem[i-1][j-1]
       } else {
         // Last characters are not same.
-        // They may match if last character of either of the
-        // string is eliminated
+        // Not a common substr at {i,j}
         mem[i][j] =  0
       }
     }
@@ -51,7 +50,7 @@ func main() {
     mem[i] = make([]int, len(str2)+1)
   }
 
-  // Initialize first row and first column to 0
+  // Initialize first two and first column to 0
   for i:=0; i <= len(str1); i++ {
     for j:=0; j <= len(str2); j++ {
       if i==0 {
@@ -61,7 +60,7 @@ func main() {
       }
     }
   }
-  fmt.Printf("lcs len of %s and %s = %d\n", str1, str2,
+  fmt.Printf("lps len of %s and %s = %d\n", str1, str2,
    longestCommonSubstr(mem, []byte(str1), []byte(str2), len(str1), len(str2)))
 }
 
