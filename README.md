@@ -1,4 +1,2 @@
 # problem_solving
-Trying out some leetcode problems
-
-main() has the testcases tried.
+Problems solved include the ones on leetcode, generic problems etc.
