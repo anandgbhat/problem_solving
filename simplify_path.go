@@ -52,6 +52,9 @@ func simplifyPath(path string) string {
     fmt.Println("stk = ", stk[i])
     output += "/"+stk[i]
   }
+  if len(stk) == 0 {
+    output = "/"
+  }
 
   return output
 }
