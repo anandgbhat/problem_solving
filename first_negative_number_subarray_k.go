@@ -19,17 +19,22 @@ func firstNegativeNumberK(nums []int, k int) []int {
   }
 
   for end < len(nums) {
+    // If some negative numbers found, check if the first value
+    // in the negatives slices matches starting of the sliding
+    // window. If so, add it to result and move the element
+    // out of negatives slice.
     if len(negatives) > 0 && nums[start] == negatives[0] {
       result = append(result, negatives[0])
       negatives = negatives[1:]
     }
     start++
     end++
+    // Check if nums[end] is negative as it is a new element
+    // in the sliding window
     if end < len(nums) && nums[end] < 0 {
       negatives = append(negatives, nums[end])
     }
   }
-
 
   return result
 }
