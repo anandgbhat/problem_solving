@@ -41,12 +41,16 @@ func isValidExp(str string) bool {
 
   var stack Stack
 
-  // Convert stack to []byte
+  // Convert str to []byte
   strSlice := []byte(str)
   for _, val := range strSlice {
+    // Only valid expressions include ( followed by ) and
+    // they should match in numbers. If not, its an invalid expression.
     if string(val) == "(" {
-      stack.Push(string(val))
+      stack.Push(string(val)) // Store in stack to match later
     } else if string(val) == ")" {
+      // Check if stack already contains matching "("
+      // If not, its an invalid expression
       if stack.IsEmpty() == true {
         return false
       }
@@ -68,4 +72,6 @@ func main() {
   fmt.Println("Is expression (abc(pqr)) valid ? ", isValidExp("(abc(pqr))"))
   fmt.Println("Is expression (a)bc(p)q((r)) valid ? ", isValidExp("(a)bc(p)q((r))"))
   fmt.Println("Is expression (a)bc(p)q((r) valid ? ", isValidExp("(a)bc(p)q((r)"))
+  fmt.Println("Is expression () valid ? ", isValidExp("()"))
+  fmt.Println("Is expression )( valid ? ", isValidExp(")("))
 }
