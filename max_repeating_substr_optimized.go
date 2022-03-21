@@ -16,7 +16,7 @@ func maxRepeatingSubstr(str1, str2 string) int {
   var str3 string
   for i = 0; i < len(str2); i++ {
     // Crude idea.
-    // Append str2 to str2 and check if the pattern is found
+    // Append str2 to str3 and check if the pattern is found
     str3 = str3 + str2
     if strings.Contains(str1, str2) == false {
       break
