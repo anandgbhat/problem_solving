@@ -25,8 +25,8 @@ func pickToys(str string, k int) int {
   for end < len(strSlice) {
     m[string(strSlice[end])]++
     // Check if m length is greater than current window size
-    // If map size < winSize, there is at least one character that's
-    // duplicate. Eliminate that character.
+    // If map size < winSize, there is at least one toy that appears twice.
+
     if len(m) >  k {
       // Keep reducing element from strSlice[start] till the condition is false
       m[string(strSlice[start])]--
