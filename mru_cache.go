@@ -6,8 +6,8 @@ import (
 
 // Logic:
 // Have head and tail pointers pointing to start and end of doubly linked list
-// Each time an cache entry is put, add the entry at the end
-// If cache is full, remove the entry at the head and add the new value to tail
+// Each time a cache entry is put, add the entry at the head.
+// If cache is full, remove the entry at the head and add the new value to head
 // For every cache hit, remove the entry and add it back to head
 
 type Node struct {
