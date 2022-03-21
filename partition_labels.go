@@ -32,7 +32,7 @@ func partitionLabel(str string) []int {
   result := make([]int, 0)
 
   // Walk through string and keep track of highest index seen so far with
-  // current set of characters. Split when current len = highest index
+  // current set of characters. Split when i == highest index
   end := 0
   size := 0
 
