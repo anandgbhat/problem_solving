@@ -14,11 +14,13 @@ func maxRepeatingSubstr(str1, str2 string) int {
   }
   var i int
   var str3 string
-  for i = 0; i < len(str2); i++ {
+  for i = 0; i < len(str1); i++ {
     // Crude idea.
-    // Append str2 to str3 and check if the pattern is found
+    // Append str2 to str2 and check if the pattern is found
     str3 = str3 + str2
-    if strings.Contains(str1, str2) == false {
+    fmt.Println(str3)
+    if strings.Contains(str1, str3) == false {
+      fmt.Println("False ")
       break
     }
   }
@@ -27,8 +29,8 @@ func maxRepeatingSubstr(str1, str2 string) int {
 }
 
 func main() {
-  fmt.Println("Max repeating characters of ababc and ab = ",
-    maxRepeatingSubstr("ababc", "ab"))
+  fmt.Println("Max repeating characters of aaa and a = ",
+    maxRepeatingSubstr("aaa", "a"))
 }
 
 
