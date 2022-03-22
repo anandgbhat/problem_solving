@@ -33,7 +33,6 @@ func sortColors(nums []int) []int {
       start++
     } else if nums[curr] == 2 {
       swap(&nums[curr], &nums[end])
-      fmt.Println(nums)
       end--
     } else {
       curr++
